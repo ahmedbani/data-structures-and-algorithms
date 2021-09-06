@@ -70,7 +70,13 @@ For example, if the input is 'Welcome', the output will be:
 const howMuchPencil = (str) => {
   let result = [];
   // Solution code here...
-  
+  let temp = str;
+  result.push(str);
+  for(let i =0 ; i<str.length;i++){
+    temp = temp.slice(1);
+    result.push(temp);
+  }
+  return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -83,6 +89,8 @@ For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 
 const wordsToCharList = (arr) => {
   // Solution code here...
+  let newArr = arr.split('');
+  return newArr;
 };
 
 
@@ -130,6 +138,13 @@ const gruffaloCrumble = {
 const listFoods = (recipe) => {
   let result = [];
   // Solution code here...
+  let temp = '';
+  // Solution code here...
+  recipe.ingredients.forEach(item => {
+    temp = item.split(' ');
+    temp =temp.slice(2);
+    result.push(temp.join(' '));
+  });
   return result;
 };
 
